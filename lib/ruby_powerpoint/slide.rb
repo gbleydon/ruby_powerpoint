@@ -44,6 +44,10 @@ module RubyPowerpoint
     end
 
     def notes_content
+      #@slide_notes_xml can be nil if problem with ppt
+      if @slide_notes_xml.nil?
+        return []
+      end
       content_elements @slide_notes_xml
     end
 
